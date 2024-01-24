@@ -1,3 +1,26 @@
+document.addEventListener('DOMContentLoaded', function () {
+    const themeToggleButton = document.getElementById('themeToggle');
+    let isDarkTheme = false;
+
+    themeToggleButton.addEventListener('click', function () {
+        isDarkTheme = !isDarkTheme;
+        document.body.classList.toggle('dark-theme', isDarkTheme);
+        toggleThemeImage();
+    });
+
+    function toggleThemeImage() {
+        const themeImage = document.querySelector('.dark img');
+        if (isDarkTheme) {
+            themeImage.src = 'sun.jpg';
+            themeImage.alt = 'Sun Image';
+        } else {
+            themeImage.src = 'moon.jpg';
+            themeImage.alt = 'Moon Image';
+        }
+    }
+});
+
+
 let display = document.getElementById('inputBox');
 let buttons = document.querySelectorAll('button');
 let buttonArray = Array.from(buttons);
@@ -19,3 +42,7 @@ buttonArray.forEach(btn =>{
         }
     });
 });
+function myFunction() {
+    var element = document.body;
+    element.classList.toggle("dark");
+  }
